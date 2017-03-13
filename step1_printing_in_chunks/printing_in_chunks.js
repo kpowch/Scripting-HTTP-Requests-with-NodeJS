@@ -9,10 +9,9 @@ function getAndPrintHTMLChunks () {
     path: '/http-examples/step1.html'
   };
 
-  /* Add your code here */
   https.get(requestOptions, function (response) {
 
-    // set encodeing of received data to UTF-8
+    // set encoding of received data to UTF-8
     response.setEncoding('utf8');
 
     // callback gets invoked whhen a 'data' chunk is received
@@ -20,6 +19,7 @@ function getAndPrintHTMLChunks () {
       console.log(data + '\n');
     });
 
+    // when there's no more data, do this
     response.on('end', function() {
       console.log('Response stream complete!');
     });
